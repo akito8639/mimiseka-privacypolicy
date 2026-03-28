@@ -6,10 +6,19 @@
   <title>Privacy Policy | MimiSeka</title>
   <script>
     (function () {
-      var lang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
-      var supported = ['ja', 'en'];
-      var target = supported.includes(lang) ? lang : 'en';
-      location.replace(target + '.html');
+      var locale = (navigator.language || navigator.userLanguage || 'en');
+      var lang = locale.split('-')[0];
+      var euLocales = [
+        'de','fr','it','es','pt','nl','pl','sv','da','fi','el','cs','ro',
+        'hu','bg','hr','sk','sl','lt','lv','et','mt','ga','en-GB','en-IE'
+      ];
+      if (lang === 'ja') {
+        location.replace('ja.html');
+      } else if (euLocales.includes(locale) || euLocales.includes(lang)) {
+        location.replace('en-eu.html');
+      } else {
+        location.replace('en.html');
+      }
     })();
   </script>
   <noscript>
@@ -17,6 +26,6 @@
   </noscript>
 </head>
 <body>
-  <p><a href="ja.html">日本語</a> | <a href="en.html">English</a></p>
+  <p><a href="ja.html">日本語</a> | <a href="en.html">English (US)</a> | <a href="en-eu.html">English (EEA/UK)</a></p>
 </body>
 </html>
