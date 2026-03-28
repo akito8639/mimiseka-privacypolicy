@@ -108,10 +108,10 @@
     <p>This policy describes how data is handled across both apps.</p>
   </div>
 
-  <h2>1. Data We Collect and How We Use It</h2>
+  <h2>1. Data We Collect, Transmit, and How We Use It</h2>
 
   <h3>Photo Data</h3>
-  <p>To generate summaries and narratives for your photo captions, photos you take or select are sent to external AI services. How data is handled after transmission is governed by each AI service's privacy policy.</p>
+  <p>To generate summaries and narratives for your photo captions, photos you take or select are sent to external generative AI services. How data is handled after transmission is governed by each service's privacy policy.</p>
   <ul>
     <li><strong>MimiSeka Scia</strong>: Generated summaries and narratives are embedded as metadata in the photo and saved to your device's photo library (in the "MimiSeka" album). This feature can be disabled in Settings.</li>
     <li><strong>MimiSeka Lupe</strong>: Captured photos are not saved to your device's photo library.</li>
@@ -128,7 +128,7 @@
   <p>This information is used to optimize app settings and is also stored in anonymized form on our servers to improve the service. It is never used to identify any individual.</p>
 
   <h3>Device Identifier</h3>
-  <p>To maintain stable service operation (daily request rate limiting), a device-specific identifier (identifierForVendor) is sent to our server. This identifier changes when the app is reinstalled and is not used for cross-app tracking or advertising purposes.</p>
+  <p>To maintain stable service operation (daily request rate limiting), a device-specific identifier assigned by Apple (identifierForVendor) is sent to our server. This identifier changes when the app is reinstalled and is not used for cross-app tracking or advertising purposes.</p>
 
   <h3>Location Data (Optional)</h3>
   <p>Location services are disabled by default and only activated if you enable them in Settings. When enabled, location data is used for:</p>
@@ -136,7 +136,7 @@
     <li>Adding location metadata to photos (when saving to album in Scia)</li>
     <li>Providing contextual information for narrative generation</li>
   </ul>
-  <p>Location data is only temporarily cached in the app's memory and is never sent to our servers.</p>
+  <p>Precise location data (latitude and longitude) is not sent to our servers. However, a coarse location name (city or municipality level) may be sent to generative AI services as contextual information for narrative generation.</p>
 
   <h3>Usage Data</h3>
   <p>To improve the app, the following usage data is recorded on your device:</p>
@@ -153,8 +153,8 @@
 
   <h2>2. Third-Party Services</h2>
 
-  <h3>AI Services</h3>
-  <p>The following AI services are used for photo analysis and narrative generation. All communications are routed through our server (AWS Lambda) over encrypted connections (HTTPS).</p>
+  <h3>Generative AI Services</h3>
+  <p>The following generative AI services are used for photo analysis and narrative generation. All communications are routed through our server over encrypted connections (HTTPS).</p>
   <ul>
     <li><strong>OpenAI</strong> — Photo analysis, text generation</li>
     <li><strong>Anthropic (Claude)</strong> — Text generation</li>
@@ -177,12 +177,12 @@
   </ul>
 
   <h3>X (formerly Twitter)</h3>
-  <p>Posting to X is optional. If you choose to use this feature, you connect your account via X's OAuth authentication. The app only requests <strong>posting (write) permission</strong>; it does not access your timeline, followers, or any other read permissions. Authentication tokens are securely stored in the device's Keychain and deleted upon logout.</p>
+  <p>Posting to X is optional. If you choose to use this feature, you connect your account via X's secure account authorisation. The app only requests <strong>posting (write) permission</strong>; it does not access your timeline, followers, or any other read permissions. Authentication credentials are securely stored in the device's secure credential storage (Keychain) and deleted upon logout.</p>
 
-  <h2>3. Photo Storage and Metadata</h2>
+  <h2>3. Data Stored on Your Device</h2>
 
   <h3>Scia</h3>
-  <p>Generated summary and narrative text can be embedded as photo metadata (IPTC caption) and saved to the "MimiSeka" album in your device's photo library. This feature can be toggled on or off in Settings. Saved photos may include the following metadata:</p>
+  <p>Generated summary and narrative text can be embedded as a description field stored inside the photo file (IPTC caption) and saved to the "MimiSeka" album in your device's photo library. This feature can be toggled on or off in Settings. Saved photos may include the following embedded data:</p>
   <ul>
     <li>Summary/narrative text (as ALT text)</li>
     <li>Emotion tags (if selected)</li>
@@ -196,19 +196,19 @@
   <h2>4. Data Security</h2>
   <ul>
     <li>All external communications are encrypted via HTTPS</li>
-    <li>API keys are not stored in the app; they are managed server-side</li>
-    <li>Apple App Attest is used for device attestation to prevent unauthorized access</li>
-    <li>Authentication tokens and device identifiers are securely stored in the device's Keychain</li>
+    <li>Service credentials are managed on our server, not stored in the app</li>
+    <li>Apple's App Attest framework is used to verify that requests come from genuine, unmodified copies of the app</li>
+    <li>Authentication credentials and device identifiers are securely stored in the device's secure credential storage (Keychain)</li>
   </ul>
 
   <h2>5. Sharing with Third Parties</h2>
   <p>Except for the external services described above, we do not sell, rent, or otherwise provide your data to third parties. <strong>We do not sell or share your personal information</strong> as defined under the California Consumer Privacy Act (CCPA/CPRA).</p>
 
   <h2>6. International Data Transfers</h2>
-  <p>Your data may be processed by third-party AI and speech synthesis services in countries outside your country of residence. All transfers are conducted over encrypted connections (HTTPS) via our server. By using the app, you acknowledge that your data may be transferred to and processed in countries that may have different data protection standards from your own.</p>
+  <p>Your data may be processed by third-party generative AI and speech synthesis services in countries outside your country of residence. All transfers are conducted over encrypted connections (HTTPS) via our server. By using the app, you acknowledge that your data may be transferred to and processed in countries that may have different data protection standards from your own.</p>
 
   <h2>7. Children's Privacy</h2>
-  <p>This app is not directed at children under the age of 13, but it may be used by children with visual impairments. In compliance with the Children's Online Privacy Protection Act (COPPA), when a user indicates they are under 13, we do not collect or transmit personally identifiable information — including survey responses and device identifiers — to our servers. We may collect anonymous usage data (non-personally identifiable statistical information) necessary for service operation and improvement. Core app features (photo analysis, narrative generation, and read-aloud) remain fully available.</p>
+  <p>This app is not directed at children under the age of 13, but it may be used by children with visual impairments. In compliance with the Children's Online Privacy Protection Act (COPPA), all survey responses and usage data are collected exclusively as anonymous, non-personally identifiable information for all users regardless of age. Device identifiers are sent to our server solely for request rate limiting and are not linked to any personal information. Core app features (photo analysis, narrative generation, and read-aloud) remain fully available regardless of age.</p>
   <p>If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete such information promptly. If you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a>.</p>
 
   <h2>8. Your Rights and Choices</h2>
