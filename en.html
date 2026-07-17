@@ -97,7 +97,7 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="last-updated">Last Updated: March 28, 2026</p>
+  <p class="last-updated">Last Updated: July 15, 2026</p>
 
   <div class="intro">
     <p>MimiSeka is an iOS app that uses AI to interpret scenes from photos and videos, generating literary narratives and summary text. The generated text can be embedded as photo captions (ALT text) or read aloud.</p>
@@ -138,6 +138,16 @@
   </ul>
   <p>Precise location data (latitude and longitude) is not sent to our servers. However, a coarse location name (city or municipality level) may be sent to generative AI services as contextual information for narrative generation.</p>
 
+  <h3>Friend List Data (Optional)</h3>
+  <p>Only if you use MimiSeka Scia's optional Friends feature (sending your stories to friends), the following data is stored on our server (AWS Tokyo region). If you do not use the Friends feature, none of this data is created or transmitted.</p>
+  <ul>
+    <li><strong>User ID</strong> — A random identifier issued by our server. It is not linked to your name, email address, phone number, or any other personal information</li>
+    <li><strong>Display name</strong> — The name shown to your friends (a nickname is fine; you choose it freely)</li>
+    <li><strong>Friendships</strong> — Information about which user IDs are friends with each other</li>
+    <li><strong>Invite tokens</strong> — Single-purpose codes contained in friend-invite QR codes and links (valid for 1 hour)</li>
+  </ul>
+  <p>Your user ID and display name are visible to people you become friends with. Your friend list may be shared between MimiSeka family apps on the same device. <strong>Your photos and the text of generated stories are never stored on this server</strong> (story sharing with friends is delivered through Apple's iCloud and does not pass through our server).</p>
+
   <h3>Usage Data</h3>
   <p>To improve the app, the following usage data is recorded on your device:</p>
   <ul>
@@ -149,7 +159,7 @@
   <p>This data is anonymized and stored on our servers solely for the purpose of service improvement. It is never used to identify any individual.</p>
 
   <h3>Data Retention</h3>
-  <p>Usage data and device identifiers are retained for the duration of service operation and deleted when the service is discontinued. Initial survey data is retained as anonymized statistical information for the duration of service operation.</p>
+  <p>Usage data and device identifiers are retained for the duration of service operation and deleted when the service is discontinued. Initial survey data is retained as anonymized statistical information for the duration of service operation. For friend list data, removing a friend immediately deletes that friendship, and running "Erase All Data" in the app deletes your user ID, display name, and all friendships from our server.</p>
 
   <h2>2. Third-Party Services</h2>
 
@@ -216,7 +226,8 @@
   <ul>
     <li>Disable location services, album saving, and other features at any time from the in-app Settings</li>
     <li>Disconnect X integration by logging out, which deletes your authentication credentials</li>
-    <li>Delete all on-device data by uninstalling the app (excluding photos already saved to your photo library)</li>
+    <li>Permanently delete your friend list server data (user ID, display name, friendships) at any time via "Erase All Data" in Settings</li>
+    <li>Delete all on-device data by uninstalling the app (excluding photos already saved to your photo library and friend list server data — for the latter, run "Erase All Data" before uninstalling)</li>
   </ul>
 
   <h3>For California Residents</h3>
