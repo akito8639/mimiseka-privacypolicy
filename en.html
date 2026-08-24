@@ -97,7 +97,7 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="last-updated">Last Updated: August 23, 2026</p>
+  <p class="last-updated">Last Updated: August 24, 2026</p>
 
   <div class="intro">
     <p>MimiSeka is an iOS app that uses AI to interpret scenes from photos and videos, generating literary narratives and summary text. The generated text can be embedded as photo captions (ALT text) or read aloud.</p>
@@ -146,16 +146,6 @@
   </ul>
   <p>Precise location data (latitude and longitude) is sent to our servers only if you use the "leave a story at this place" feature described below. Otherwise, a coarse location name (city or municipality level) may be sent to generative AI services as contextual information for narrative generation. Place names, venue names, and weather are retrieved through Apple's services and do not pass through our servers.</p>
 
-  <h3>Friend List Data (Optional)</h3>
-  <p>Only if you use MimiSeka Scia's optional Friends feature (sending your stories to friends), the following data is stored on our server (AWS Tokyo region). If you do not use the Friends feature, none of this data is created or transmitted.</p>
-  <ul>
-    <li><strong>User ID</strong> — A random identifier issued by our server. It is not linked to your name, email address, phone number, or any other personal information</li>
-    <li><strong>Display name</strong> — The name shown to your friends (a nickname is fine; you choose it freely)</li>
-    <li><strong>Friendships</strong> — Information about which user IDs are friends with each other</li>
-    <li><strong>Invite tokens</strong> — Single-purpose codes contained in friend-invite QR codes and links (valid for 1 hour)</li>
-  </ul>
-  <p>Your user ID and display name are visible to people you become friends with. Your friend list may be shared between MimiSeka family apps on the same device. Story sharing between friends is delivered through Apple's iCloud, so <strong>no photo or story text is stored on our servers for the purpose of sharing</strong>. However, if you use the "listenable photo" or "leave a story at this place" features described below, the relevant content is stored on our servers in order to publish it.</p>
-
   <h3>Content You Publish as a "Listenable Photo" (Optional)</h3>
   <p>MimiSeka Scia lets you turn a story or diary entry into a link or QR code so that people without the app can listen to it. <strong>Only when you use this feature</strong>, the following is stored on our servers (AWS Tokyo region) and becomes accessible to anyone who has the link:</p>
   <ul>
@@ -169,13 +159,20 @@
   <h3>"Leave a Story at This Place" (Optional)</h3>
   <p>MimiSeka Scia lets you leave a story at the place where the photo was taken. If you use this feature, your story (text, narration audio, capture date, and capture coordinates) is stored on our servers and <strong>shown anonymously to other users who visit that place, as "a story someone left here."</strong> The publication period is one year.</p>
   <p>Your name and display name are never shown alongside a story you leave. You can withdraw it at any time from within the app. Withdrawing stops new deliveries, though it may remain on devices that already received it.</p>
-  <p>Stories left at a place can be reported, and we remove anything we judge to be inappropriate.</p>
+  <p>When you place a story, its text is sent once to an automated content check (OpenAI's Moderation API) before it is published. Text judged inappropriate is neither stored nor published. Photos are never stored on our servers by this feature (what is stored is the text, the narration audio, the capture date, and the capture coordinates).</p>
+  <p>Stories left at a place can be reported. A reported story stops being delivered immediately, and we then review it and decide whether to restore or delete it. The reason selected by the reporter, and any note they choose to write, are stored on our servers for up to 400 days for audit purposes.</p>
+  <p>For this feature only, we store a <strong>pseudonymised identifier</strong> for the author and for the reporter. It is derived from the publishing identifier held on your device (a value unrelated to your name or email address) by a salted, irreversible hash, and it is used for two purposes only:</p>
+  <ul>
+    <li>To exclude an author's stories from delivery when a recipient chooses "stop receiving stories from this person"</li>
+    <li>To identify people who repeatedly post inappropriate content</li>
+  </ul>
+  <p>This identifier is never displayed, and never passed to other users or apps. Authors and reporters are hashed with separate domains, so the two cannot be matched against each other. Block records (who does not want to receive from whom) are likewise stored as a relation between pseudonymised identifiers.</p>
 
   <h3>Push Notifications (Optional)</h3>
   <p>If you use "letters from MimiSeka," we deliver notifications through Apple's Push Notification service (APNs). You can revoke notification permission at any time in iOS Settings.</p>
 
-  <h3>iCloud (CloudKit) Storage and Sharing</h3>
-  <p>The photos, stories, and diary entries collected on your shelf are stored and synced in your own iCloud. This happens entirely within Apple's services and does not pass through our servers. Sharing with family and friends uses the same mechanism. Data held in iCloud is governed by Apple's privacy policy.</p>
+  <h3>iCloud (CloudKit) Storage and Sync</h3>
+  <p>The photos, stories, and diary entries collected on your shelf are stored and synced in your own iCloud. This happens entirely within Apple's services and does not pass through our servers. Data held in iCloud is governed by Apple's privacy policy.</p>
 
   <h3>In-App Purchases</h3>
   <p>If you buy a subscription or a ticket pack, we verify the signed purchase receipt issued by Apple on our servers and record the resulting allowance against your device identifier. We never receive your payment details, such as credit card numbers.</p>
@@ -191,7 +188,7 @@
   <p>This data is anonymized and stored on our servers solely for the purpose of service improvement. It is never used to identify any individual.</p>
 
   <h3>Data Retention</h3>
-  <p>Content published as a "listenable photo" is retained until the period you chose when publishing (30 days by default), after which it is deleted automatically. A story left at a place is retained for one year. In both cases, revoking publication in the app makes the content unreadable from then on. Usage data and device identifiers are retained for the duration of service operation and deleted when the service is discontinued. Initial survey data is retained as anonymized statistical information for the duration of service operation. For friend list data, removing a friend immediately deletes that friendship, and running "Erase All Data" in the app deletes your user ID, display name, and all friendships from our server.</p>
+  <p>Content published as a "listenable photo" is retained until the period you chose when publishing (30 days by default), after which it is deleted automatically. A story left at a place is retained for one year. Report records are retained for up to 400 days, and block records until they are removed. In both cases, revoking publication in the app makes the content unreadable from then on. Usage data and device identifiers are retained for the duration of service operation and deleted when the service is discontinued. Initial survey data is retained as anonymized statistical information for the duration of service operation.</p>
 
   <h2>2. Third-Party Services</h2>
 
@@ -253,7 +250,7 @@
 
   <h2>7. Children's Privacy</h2>
   <p>This app is not directed at children under the age of 13, but it may be used by children with visual impairments. In compliance with the Children's Online Privacy Protection Act (COPPA), all survey responses and usage data are collected exclusively as anonymous, non-personally identifiable information for all users regardless of age. Device identifiers are sent to our server solely for request rate limiting and are not linked to any personal information. Core app features (photo analysis, narrative generation, and read-aloud) remain fully available regardless of age.</p>
-  <p>That said, publishing a "listenable photo," leaving a story at a place, and writing a message on a gift are all features where what you write can be seen by other people. If a child uses the app, a parent or guardian should review these features first. Any publication can be revoked.</p>
+  <p>That said, publishing a "listenable photo" and leaving a story at a place are features where what you write can be seen by other people. If a child uses the app, a parent or guardian should review these features first. Any publication can be revoked.</p>
   <p>If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete such information promptly. If you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a>.</p>
 
   <h2>8. Your Rights and Choices</h2>
@@ -263,8 +260,8 @@
     <li>Disconnect X integration by logging out, which deletes your authentication credentials</li>
     <li>Revoke a published "listenable photo" at any time via "Disable QR" in the app; once revoked, the link no longer opens</li>
     <li>Withdraw a story you left at a place at any time via "stop leaving it" in the app</li>
-    <li>Permanently delete your friend list server data (user ID, display name, friendships) at any time via "Erase All Data" in Settings</li>
-    <li>Delete all on-device data by uninstalling the app (excluding photos already saved to your photo library and friend list server data — for the latter, run "Erase All Data" before uninstalling)</li>
+    <li>Delete all on-device data at any time via "Erase All Data" in Settings</li>
+    <li>Delete all on-device data by uninstalling the app (excluding photos already saved to your photo library). Revoke anything you have published as a "listenable photo" or left at a place before uninstalling</li>
   </ul>
 
   <h3>For California Residents</h3>
@@ -287,7 +284,7 @@
   <h2>11. Contact Us</h2>
   <div class="contact">
     <p>If you have any questions or requests regarding privacy, please contact us:</p>
-    <p>Operator: MimiSeka Project<br>Email: <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a></p>
+    <p>Operator: MimiSeka Project<br>Privacy enquiries: <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a><br>Reports, problems, and general enquiries: <a href="mailto:support@mimiseka.jp">support@mimiseka.jp</a> (also reachable from Settings &rarr; About This App &rarr; Contact us in the app)</p>
   </div>
 
   <footer>
