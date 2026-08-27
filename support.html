@@ -84,6 +84,37 @@
       padding: 1.2rem 1.5rem;
       margin-top: 1rem;
     }
+    .table-scroll {
+      overflow-x: auto;
+      margin: 1rem 0 1.2rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      min-width: 640px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.7rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+    thead th {
+      background: var(--accent-bg);
+      white-space: nowrap;
+    }
+    tbody th {
+      background: var(--accent-bg);
+      text-align: left;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+    table small {
+      color: var(--muted);
+      font-size: 0.8em;
+    }
     footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -112,17 +143,40 @@
   <h2>よくある質問</h2>
 
   <h3>無料でどこまで使えますか</h3>
-  <p>写真の「説明」を 1 週間に 15 回まで無料でお使いいただけます。物語・写真との対話・日記は月額プランでのご利用となります。</p>
+  <p>写真の「説明」を 1 週間に 15 回、写真との対話を 1 週間に 10 往復（1 枚につき 5 往復まで）お使いいただけます。自分で書いて本棚に残すことに制限はありません。</p>
+  <p>AI が物語や日記を書く機能は、サポータープラン以上でご利用いただけます。</p>
 
   <h3>プランと料金を教えてください</h3>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>無料</th>
+        <th>サポーター<br><small>月額 300 円</small></th>
+        <th>スタンダード<br><small>月額 600 円</small></th>
+        <th>プレミアム<br><small>月額 1,000 円</small></th>
+        <th>マスター<br><small>月額 2,000 円</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>写真の説明</th><td>週 15 回</td><td>週 15 回</td><td>週 25 回</td><td>週 25 回</td><td>週 25 回</td></tr>
+      <tr><th>写真との対話</th><td>週 10 往復<br><small>1 枚につき 5 往復</small></td><td>週 15 往復</td><td>週 30 往復</td><td>週 50 往復</td><td>週 100 往復</td></tr>
+      <tr><th>AI が物語を書く</th><td>—</td><td>週 1 本</td><td>週 5 本</td><td>週 10 本</td><td>週 10 本</td></tr>
+      <tr><th>AI が日記を書く</th><td>—</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><th>使える文体</th><td>説明</td><td>＋語り・絵日記<br><small>計 3</small></td><td>＋情景・視線誘導・観察・食レポ<br><small>計 7</small></td><td>全 11 文体</td><td>全 11 文体</td></tr>
+      <tr><th>文章の品質</th><td>—</td><td>標準</td><td>標準</td><td>上位モデル</td><td>上位モデル</td></tr>
+      <tr><th>本文の編集</th><td>—</td><td>—</td><td>—</td><td>○</td><td>○</td></tr>
+      <tr><th>読み上げの声</th><td>iPhone 標準</td><td>AI 音声</td><td>AI 音声</td><td>AI 音声</td><td>AI 音声＋<br>自然な日本語音声</td></tr>
+      <tr><th>英語への翻訳</th><td>—</td><td>—</td><td>—</td><td>—</td><td>○</td></tr>
+      <tr><th>自分で書いて残す</th><td>無制限</td><td>無制限</td><td>無制限</td><td>無制限</td><td>無制限</td></tr>
+    </tbody>
+  </table>
+  </div>
   <ul>
-    <li>サポーター 月額 300 円 — 写真との対話と日記、語り・絵日記の文体、物語は週 1 本</li>
-    <li>スタンダード 月額 600 円 — 情景・視線誘導・観察・食レポを追加、物語は週 5 本</li>
-    <li>プレミアム 月額 1,000 円 — 全 11 文体、物語は週 10 本、本文の編集</li>
-    <li>マスター 月額 2,000 円 — プレミアムのすべてに加えて、英語への翻訳と自然な日本語音声</li>
-    <li>自然な日本語音声（単体のオプション） 月額 500 円</li>
+    <li>「自然な日本語音声」は月額 500 円のオプションとして、スタンダードプラン以上に追加できます（マスターには含まれています）。</li>
+    <li>月額を使わずに、必要なぶんだけ買える「物語化チケット」もあります（10 回 1,200 円 / 25 回 2,500 円 / 50 回 4,000 円 / 100 回 6,000 円・期限なし）。チケットがあれば、無料のままでも語り・絵日記の文体で物語を作れます。</li>
   </ul>
-  <p>月額を使わずに、必要なぶんだけ買える「物語化チケット」もあります（10 回 1,200 円 / 25 回 2,500 円 / 50 回 4,000 円 / 100 回 6,000 円・期限なし）。</p>
 
   <h3>解約したいのですが</h3>
   <p>サブスクリプションの解約は App Store 側で行います。iPhone の「設定」から一番上のお名前 →「サブスクリプション」と進み、ミミセカを選んで解約してください。期間終了の 24 時間前までに解約すると、次回の更新は行われません。</p>
