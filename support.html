@@ -4,140 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>サポート | ミミセカ（MimiSeka）</title>
-  <style>
-    :root {
-      --text: #1a1a1a;
-      --bg: #ffffff;
-      --muted: #555;
-      --border: #e0e0e0;
-      --link: #0066cc;
-      --accent-bg: #f7f7f7;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text: #e0e0e0;
-        --bg: #1a1a1a;
-        --muted: #aaa;
-        --border: #333;
-        --link: #6bb3ff;
-        --accent-bg: #222;
-      }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.8;
-      padding: 2rem 1rem;
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.3rem;
-    }
-    .last-updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-    .intro {
-      margin-bottom: 2rem;
-    }
-    .intro p {
-      margin-bottom: 0.8rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 2.5rem;
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-size: 1.05rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 0.8rem;
-    }
-    ul {
-      margin: 0.5rem 0 1rem 1.5rem;
-    }
-    li {
-      margin-bottom: 0.4rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact {
-      background: var(--accent-bg);
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem;
-      margin-top: 1rem;
-    }
-    .table-scroll {
-      overflow-x: auto;
-      margin: 1rem 0 1.2rem;
-      -webkit-overflow-scrolling: touch;
-    }
-    table {
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      min-width: 640px;
-    }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 0.5rem 0.7rem;
-      text-align: center;
-      vertical-align: middle;
-    }
-    thead th {
-      background: var(--accent-bg);
-      white-space: nowrap;
-    }
-    tbody th {
-      background: var(--accent-bg);
-      text-align: left;
-      white-space: nowrap;
-      font-weight: 600;
-    }
-    table small {
-      color: var(--muted);
-      font-size: 0.8em;
-    }
-    tbody tr.group th {
-      text-align: left;
-      background: var(--border);
-      font-weight: 700;
-    }
-    tbody th.sub {
-      padding-left: 1.6rem;
-      font-weight: 400;
-    }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=20260928">
+  <script src="site.js?v=20260928" defer></script>
+  <link rel="icon" type="image/png" sizes="64x64" href="brand/favicon.png">
+  <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+  <meta name="theme-color" content="#F6F1E7">
 </head>
 <body>
-<main>
+
+<a class="skip" href="#main">本文へとばす</a>
+<nav class="topbar" aria-label="ページの位置"><a class="home" href="https://mimiseka.jp/"><picture><source srcset="brand/logo-line-dark.png" media="(prefers-color-scheme: dark)"><img src="brand/logo-line.png" alt="ミミセカ" height="26"></picture></a><a href="https://mimiseka.jp/scia/">シア</a></nav>
+
+<header class="cover">
+  <div class="kicker">ミミセカ シア</div>
   <h1>サポート</h1>
-  <p class="last-updated">ミミセカ シア（MimiSeka Scia）</p>
+</header>
+
+<main id="main" class="frame doc">
 
   <div class="intro">
     <p>ミミセカをお使いいただきありがとうございます。うまく動かないとき、使い方が分からないとき、ご意見をお寄せいただけるときは、下記までご連絡ください。</p>
@@ -234,15 +119,24 @@
     <li><a href="terms.html">「場所に置く物語」利用規約</a></li>
   </ul>
 
-  <h2>Support (English)</h2>
+  <h2 id="en" lang="en">Support (English)</h2>
   <p>Thank you for using MimiSeka. For questions, bug reports, or feedback, please email <a href="mailto:support@mimiseka.jp">support@mimiseka.jp</a>. We normally reply within 2–3 business days. When reporting a problem, please include your device model, iOS version, and where in the app it happened.</p>
   <p>Subscriptions are managed through the App Store: open Settings, tap your name, then Subscriptions. To restore a previous purchase, open the plan screen from Settings and tap "Restore Purchases" while signed in with the same Apple Account.</p>
   <p>See also our <a href="en.html">Privacy Policy</a> and the <a href="terms-en.html">Stories Left at a Place — Terms of Use</a>.</p>
 
-  <footer>
-    <p><a href="ja.html">プライバシーポリシー</a> | <a href="en.html">Privacy Policy (EN)</a></p>
-    <p>&copy; 2026 ミミセカ プロジェクト</p>
-  </footer>
 </main>
+
+<footer>
+  <div class="links">
+    <a href="https://mimiseka.jp/">ミミセカ</a>
+    <a href="https://mimiseka.jp/scia/">シア</a>
+    <a href="https://mimiseka.jp/accessibility.html">アクセシビリティ</a>
+    <a href="support.html">サポート</a>
+    <a href="ja.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+  </div>
+  <p class="lang"><a href="#en">English</a> | <a href="en.html">Privacy Policy (EN)</a></p>
+  <p class="copyright">&copy; 2026 MimiSeka Project</p>
+</footer>
 </body>
 </html>

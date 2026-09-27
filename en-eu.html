@@ -4,116 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy (EEA/UK) | MimiSeka</title>
-  <style>
-    :root {
-      --text: #1a1a1a;
-      --bg: #ffffff;
-      --muted: #555;
-      --border: #e0e0e0;
-      --link: #0066cc;
-      --accent-bg: #f7f7f7;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text: #e0e0e0;
-        --bg: #1a1a1a;
-        --muted: #aaa;
-        --border: #333;
-        --link: #6bb3ff;
-        --accent-bg: #222;
-      }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.8;
-      padding: 2rem 1rem;
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.3rem;
-    }
-    .last-updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-    .intro {
-      margin-bottom: 2rem;
-    }
-    .intro p {
-      margin-bottom: 0.8rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 2.5rem;
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-size: 1.05rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 0.8rem;
-    }
-    ul {
-      margin: 0.5rem 0 1rem 1.5rem;
-    }
-    li {
-      margin-bottom: 0.4rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact {
-      background: var(--accent-bg);
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem;
-      margin-top: 1rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      font-size: 0.95rem;
-    }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 0.6rem 0.8rem;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: var(--accent-bg);
-      font-weight: 600;
-    }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=20260928">
+  <link rel="icon" type="image/png" sizes="64x64" href="brand/favicon.png">
+  <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+  <meta name="theme-color" content="#F6F1E7">
 </head>
 <body>
-<main>
+
+<a class="skip" href="#main">Skip to content</a>
+<nav class="topbar" aria-label="Site"><a class="home" href="https://mimiseka.jp/"><picture><source srcset="brand/logo-line-dark.png" media="(prefers-color-scheme: dark)"><img src="brand/logo-line.png" alt="MimiSeka" height="26"></picture></a></nav>
+
+<header class="cover">
+  <div class="kicker">MimiSeka</div>
   <h1>Privacy Policy</h1>
-  <p class="last-updated">Last Updated: September 11, 2026</p>
+  <p class="updated">Last Updated: September 11, 2026</p>
+</header>
+
+<main id="main" class="frame doc">
 
   <div class="intro">
     <p>MimiSeka is an iOS app that uses AI to interpret scenes from photos and videos, generating literary narratives and summary text. The generated text can be embedded as photo captions (ALT text) or read aloud.</p>
@@ -385,10 +294,17 @@
     <p>Data Controller: MimiSeka Project<br>Privacy enquiries: <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a><br>Reports, problems, and general enquiries: <a href="mailto:support@mimiseka.jp">support@mimiseka.jp</a> (also reachable from Settings &rarr; About This App &rarr; Contact us in the app)</p>
   </div>
 
-  <footer>
-    <p><a href="ja.html">日本語</a> | <a href="en.html">English (US)</a></p>
-    <p>&copy; 2026 MimiSeka Project</p>
-  </footer>
 </main>
+
+<footer>
+  <div class="links">
+    <a href="https://mimiseka.jp/">MimiSeka</a>
+    <a href="support.html#en">Support</a>
+    <a href="en.html">Privacy Policy</a>
+    <a href="terms-en.html">Terms of Use</a>
+  </div>
+  <p class="lang"><a href="ja.html">日本語</a> | <a href="en.html">English (US)</a></p>
+  <p class="copyright">&copy; 2026 MimiSeka Project</p>
+</footer>
 </body>
 </html>

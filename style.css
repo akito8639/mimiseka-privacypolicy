@@ -1,0 +1,91 @@
+/* ミミセカ サポート・プライバシーポリシー・規約 — 共通スタイル
+   色・書体・上部バー・表紙・フッターは公式サイト（mimiseka.jp の site.css・SciaTheme 正典: 紙・墨・朱）から写している。
+   サイト側の配色を変えたら :root の値をここにも写すこと。 */
+:root {
+  --ground: #F6F1E7; --ground-raised: #FCF9F1; --ground-inset: #ECE4D4; --dusk: #F5E8DC;
+  --ink: #2C2620; --ink-2: #5F554A; --ink-3: #8A7D6D; --hair: #DCD2C0;
+  --shu: #B5442A; --shu-soft: rgba(181, 68, 42, 0.10); --lamp: #E8C989;
+  --serif: 'Zen Old Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --sans: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #16120E; --ground-raised: #201A15; --ground-inset: #0F0B08; --dusk: #241B13;
+    --ink: #F3EDE3; --ink-2: rgba(243,237,227,0.68); --ink-3: rgba(243,237,227,0.46);
+    --hair: rgba(243,237,227,0.15); --shu: #E07B5F; --shu-soft: rgba(224,123,95,0.14);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #16120E; --ground-raised: #201A15; --ground-inset: #0F0B08; --dusk: #241B13;
+  --ink: #F3EDE3; --ink-2: rgba(243,237,227,0.68); --ink-3: rgba(243,237,227,0.46);
+  --hair: rgba(243,237,227,0.15); --shu: #E07B5F; --shu-soft: rgba(224,123,95,0.14);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 2.0; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; hanging-punctuation: allow-end; }
+html[lang="en"] body { word-break: normal; line-height: 1.85; }
+.np { white-space: nowrap; }
+::selection { background: var(--shu-soft); }
+a { color: var(--shu); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; }
+.frame { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.skip { position: absolute; left: -9999px; top: 0; background: var(--ink); color: var(--ground); padding: 8px 16px; z-index: 100; }
+.skip:focus { left: 12px; top: 12px; }
+
+/* 上部バー */
+.topbar { padding: 22px 24px 0; max-width: 720px; margin: 0 auto; font-size: 0.82rem; display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.topbar a { color: var(--ink-2); text-decoration: none; }
+.topbar a:hover { color: var(--shu); }
+.topbar .home { display: inline-flex; align-items: center; padding: 8px 0; }
+.topbar .home img { height: 26px; width: auto; display: block; }
+
+/* 表紙 */
+.cover { text-align: center; padding: 44px 24px 36px; background: linear-gradient(180deg, var(--dusk) 0%, var(--ground) 82%); }
+.cover .kicker { font-size: 0.7rem; letter-spacing: 0.3em; color: var(--ink-3); text-indent: 0.3em; margin-bottom: 12px; }
+.cover h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(1.5rem, 4.6vw, 2.2rem); letter-spacing: 0.16em; text-indent: 0.16em; color: var(--ink); text-wrap: balance; line-height: 1.7; }
+html[lang="en"] .cover h1 { letter-spacing: 0.04em; text-indent: 0; }
+.cover .updated { margin-top: 12px; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--ink-3); }
+
+/* 本文 */
+.doc { padding-top: 32px; padding-bottom: 64px; }
+.doc h2 { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--ink); text-wrap: balance; margin: 48px 0 14px; padding-top: 32px; border-top: 1px solid var(--hair); }
+html[lang="en"] .doc h2 { letter-spacing: 0.02em; }
+.doc h3 { font-family: var(--serif); font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; line-height: 1.8; color: var(--ink); margin: 28px 0 6px; }
+html[lang="en"] .doc h3 { letter-spacing: 0.01em; }
+.doc h2 + h3 { margin-top: 8px; }
+.doc p, .doc li { color: var(--ink-2); font-size: 0.92rem; }
+.doc p { margin-bottom: 0.8em; }
+.doc strong, .doc b { color: var(--ink); font-weight: 700; }
+.doc small { font-size: 0.82em; color: var(--ink-3); }
+.doc ul, .doc ol { margin: 6px 0 16px 1.4em; }
+.doc li { margin-bottom: 0.35em; }
+.doc li::marker { color: var(--ink-3); }
+
+/* 囲み（はじめに・問い合わせ先・要約）— サイトのカードと同じ面 */
+.intro, .contact, .summary { background: var(--ground-raised); border: 1px solid var(--hair); border-radius: 18px; padding: 20px 24px 12px; margin: 0 0 24px; }
+.contact { margin-top: 20px; border-color: var(--shu); }
+.intro > :last-child, .contact > :last-child, .summary > :last-child { margin-bottom: 8px; }
+
+/* 表 */
+.table-scroll { overflow-x: auto; margin: 16px 0 18px; -webkit-overflow-scrolling: touch; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 0.86rem; line-height: 1.6; margin: 16px 0 18px; background: var(--ground-raised); }
+.table-scroll table { margin: 0; min-width: 640px; }
+.doc th, .doc td { border: 1px solid var(--hair); padding: 8px 10px; text-align: left; vertical-align: top; color: var(--ink-2); }
+.doc thead th { background: var(--ground-inset); color: var(--ink); font-weight: 700; }
+.doc tbody th { background: var(--ground-inset); color: var(--ink); font-weight: 500; }
+/* はみ出させない表（EEA 版の法的根拠表）は長い語も枠内で折る。横スクロールの表（料金表）は折らずに横へ流す */
+.doc > table th, .doc > table td { overflow-wrap: anywhere; }
+.table-scroll th, .table-scroll td { text-align: center; vertical-align: middle; }
+.table-scroll thead th { white-space: nowrap; }
+.table-scroll tbody th { text-align: left; white-space: nowrap; }
+.doc tbody tr.group th { background: var(--dusk); font-family: var(--serif); font-weight: 700; text-align: left; }
+.doc tbody th.sub { padding-left: 1.6rem; font-weight: 400; background: var(--ground-raised); }
+
+/* フッター */
+footer { padding: 36px 24px 60px; color: var(--ink-3); font-size: 0.76rem; letter-spacing: 0.04em; border-top: 1px solid var(--hair); text-align: center; }
+footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; margin-bottom: 14px; }
+footer .links a { color: var(--ink-2); text-decoration: none; }
+footer .links a:hover { color: var(--shu); }
+footer .lang a { color: var(--ink-2); }
+footer .copyright { margin-top: 18px; font-size: 0.72rem; letter-spacing: 0.08em; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

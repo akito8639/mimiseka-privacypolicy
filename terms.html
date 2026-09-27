@@ -4,109 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>「場所に置く物語」利用規約 | ミミセカ（MimiSeka）</title>
-  <style>
-    :root {
-      --text: #1a1a1a;
-      --bg: #ffffff;
-      --muted: #555;
-      --border: #e0e0e0;
-      --link: #0066cc;
-      --accent-bg: #f7f7f7;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text: #e0e0e0;
-        --bg: #1a1a1a;
-        --muted: #aaa;
-        --border: #333;
-        --link: #6bb3ff;
-        --accent-bg: #222;
-      }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.8;
-      padding: 2rem 1rem;
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.3rem;
-    }
-    .last-updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-    .intro {
-      margin-bottom: 2rem;
-    }
-    .intro p {
-      margin-bottom: 0.8rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 2.5rem;
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-size: 1.05rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 0.8rem;
-    }
-    ul, ol {
-      margin: 0.5rem 0 1rem 1.5rem;
-    }
-    li {
-      margin-bottom: 0.4rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .summary {
-      background: var(--accent-bg);
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem;
-      margin: 1rem 0 2rem;
-    }
-    .summary p:last-child {
-      margin-bottom: 0;
-    }
-    .contact {
-      background: var(--accent-bg);
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem;
-      margin-top: 1rem;
-    }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=20260928">
+  <script src="site.js?v=20260928" defer></script>
+  <link rel="icon" type="image/png" sizes="64x64" href="brand/favicon.png">
+  <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+  <meta name="theme-color" content="#F6F1E7">
 </head>
 <body>
-<main>
+
+<a class="skip" href="#main">本文へとばす</a>
+<nav class="topbar" aria-label="ページの位置"><a class="home" href="https://mimiseka.jp/"><picture><source srcset="brand/logo-line-dark.png" media="(prefers-color-scheme: dark)"><img src="brand/logo-line.png" alt="ミミセカ" height="26"></picture></a><a href="https://mimiseka.jp/scia/">シア</a></nav>
+
+<header class="cover">
+  <div class="kicker">ミミセカ シア</div>
   <h1>「場所に置く物語」利用規約</h1>
-  <p class="last-updated">制定日: 2026年9月4日（第 1 版）</p>
+  <p class="updated">制定日: 2026年9月4日（第 1 版）</p>
+</header>
+
+<main id="main" class="frame doc">
 
   <div class="intro">
     <p>この規約は、ミミセカ シア（MimiSeka Scia、以下「本アプリ」）の「場所に置く物語」に関するものです。運営者であるミミセカ プロジェクト（以下「当社」）と、この機能を使うあなたとの間の約束を定めます。</p>
@@ -266,10 +183,19 @@
   <h2>10. 準拠法と裁判所</h2>
   <p>この規約は日本法にもとづいて解釈されます。本機能に関して当社とあなたの間で争いが生じた場合、東京地方裁判所を第一審の専属的合意管轄裁判所とします。ただし、消費者契約法その他の法令により別の裁判所が定められる場合は、その定めに従います。</p>
 
-  <footer>
-    <p><a href="terms-en.html">English</a> | <a href="ja.html">プライバシーポリシー</a> | <a href="support.html">サポート</a></p>
-    <p>&copy; 2026 ミミセカ プロジェクト</p>
-  </footer>
 </main>
+
+<footer>
+  <div class="links">
+    <a href="https://mimiseka.jp/">ミミセカ</a>
+    <a href="https://mimiseka.jp/scia/">シア</a>
+    <a href="https://mimiseka.jp/accessibility.html">アクセシビリティ</a>
+    <a href="support.html">サポート</a>
+    <a href="ja.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+  </div>
+  <p class="lang"><a href="terms-en.html">English</a></p>
+  <p class="copyright">&copy; 2026 MimiSeka Project</p>
+</footer>
 </body>
 </html>
