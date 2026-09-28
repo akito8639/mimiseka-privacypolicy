@@ -19,7 +19,7 @@
 <header class="cover">
   <div class="kicker">MimiSeka</div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last Updated: September 11, 2026</p>
+  <p class="updated">Last Updated: September 28, 2026</p>
 </header>
 
 <main id="main" class="frame doc">
@@ -35,54 +35,70 @@
   <h2>1. Data We Collect, Transmit, and How We Use It</h2>
 
   <h3>Photo Data</h3>
-  <p>To generate summaries and narratives for your photo captions, photos you take or select are sent to external generative AI services. How data is handled after transmission is governed by each service's privacy policy.</p>
+  <p>To generate summaries and narratives for your photo captions, photos you take or select are sent to external generative AI services (OpenAI and Anthropic). How data is handled after transmission is governed by each service's privacy policy.</p>
   <ul>
     <li><strong>MimiSeka Scia</strong>: Generated summaries and narratives are embedded as metadata in the photo and saved to your device's photo library (in the "MimiSeka" album). This feature can be disabled in Settings.</li>
   </ul>
 
-  <h3>Conversation, Diary, and Note Text (Scia)</h3>
+  <h3 id="dialogue">Conversation, Diary, and Note Text (Scia)</h3>
   <p>The text you type or speak while talking about a photo, any note you attach to a photo, and the material used to write a diary entry are sent to third-party generative AI services in order to produce the writing. Once transmitted, that data is handled according to each service's own privacy policy.</p>
-  <p>The conversation record itself is kept on your device (see <a href="#local">3. Data Stored on Your Device</a>).</p>
+  <p>To make conversations and diary entries feel natural, the app also sends, as context each time it generates a conversation reply or a diary entry, the "conversation memory" kept on your device (notes distilled from past conversations about how you speak and what you tend to care about) and notes on your writing style (its characteristics and short samples). Building the conversation memory also sends what you said to the generative AI service.</p>
+  <p>The conversation record itself, and these notes, are kept on your device (see <a href="#local">3. Data Stored on Your Device</a>).</p>
 
   <h3>Initial Survey</h3>
   <p>On first launch, the app asks for the following information:</p>
   <ul>
     <li>Vision status</li>
+    <li>How you see (e.g. blurred, glare, narrow field of view; optional)</li>
     <li>Age</li>
-    <li>Narrative mode preference</li>
-    <li>Auto-read-aloud setting</li>
+    <li>Auto-read-aloud setting (optional)</li>
   </ul>
-  <p>This information is used to optimize app settings and is also stored in anonymized form on our servers to improve the service. It is never used to identify any individual.</p>
+  <p>This information is used to optimize app settings. To improve the service, it is also stored on our servers together with the settings chosen automatically from your answers and your device model, iOS version, language, region, and whether VoiceOver is on. This record contains no device identifier or anything else that identifies you or your device, and it is never used to identify any individual.</p>
 
   <h3>Device Identifier</h3>
-  <p>To maintain stable service operation (daily request rate limiting), a device-specific identifier assigned by Apple (identifierForVendor) is sent to our server. This identifier changes when the app is reinstalled and is not used for cross-app tracking or advertising purposes.</p>
+  <p>A device-specific identifier assigned by Apple (identifierForVendor) is sent to our server with each request. It is used only to:</p>
+  <ul>
+    <li>Enforce usage limits (weekly in Scia)</li>
+    <li>Record usage allowances you have purchased</li>
+    <li>Confirm that requests come from the genuine app and prevent abuse</li>
+  </ul>
+  <p>This identifier changes when the app is reinstalled and is not used for cross-app tracking or advertising purposes.</p>
 
   <h3>Location Data (Optional)</h3>
   <p>Location data is only collected when you grant the app location access through your device's iOS system settings. When enabled, location data is used for:</p>
   <ul>
     <li>Adding location metadata to photos (when saving to album in Scia)</li>
-    <li>Providing contextual information for narrative generation</li>
+    <li>Providing contextual information for stories and conversations</li>
     <li>Showing where a photo was taken on a map inside the app</li>
     <li>Building an on-device register of the prefectures and municipalities you have visited</li>
     <li>Retrieving place and venue names for the capture point via Apple Maps</li>
     <li>Retrieving the weather at the capture point and time via Apple WeatherKit</li>
   </ul>
-  <p>Precise location data (latitude and longitude) is sent to our servers only if you use the "leave a story at this place" feature described below. Otherwise, a coarse location name (city or municipality level) may be sent to generative AI services as contextual information for narrative generation. Place names, venue names, and weather are retrieved through Apple's services and do not pass through our servers.</p>
+  <p>Precise location data (latitude and longitude) is sent to our servers only if you use the "Leave a Story at This Place" feature described below. Otherwise, location-related information is sent only in the following forms:</p>
+  <ul>
+    <li><strong>To generative AI services</strong> — the municipality-level place name, venue name, and the weather at capture time may be sent as text, as context for stories and conversations</li>
+    <li><strong>To our servers</strong> — to show "photos taken around here" on the capture screen, the number of the roughly 500 m &times; 500 m grid cell containing the capture point is sent. Latitude and longitude are not sent; only a count of photos per cell per day is recorded, with no device identifier or anything else that identifies your device</li>
+  </ul>
+  <p>Place names, venue names, and weather are retrieved through Apple's services and do not pass through our servers.</p>
 
   <h3>Content You Publish as a "Listenable Photo" (Optional)</h3>
   <p>MimiSeka Scia lets you turn a story or diary entry into a link or QR code so that people without the app can listen to it. <strong>Only when you use this feature</strong>, the following is stored on our servers (AWS Tokyo region) and becomes accessible to anyone who has the link:</p>
   <ul>
-    <li><strong>Text</strong> — the story or diary entry, its title, capture date, and other display information</li>
+    <li><strong>Text</strong> — the story or diary entry, its title, capture date, the place name, and other display information</li>
     <li><strong>Narration audio</strong> — the synthesized audio file</li>
-    <li><strong>Photo</strong> — stored only if you explicitly choose to publish with the photo. The JPEG with the story embedded is stored as-is</li>
+    <li><strong>Photo</strong> — when publishing as a QR code, stored only if you turn on "Photo" in the publishing settings (off by default). When you use "Send as link", the photo is always stored so the recipient can listen alongside it. In both cases the JPEG with the story embedded is stored as-is</li>
   </ul>
-  <p>Publication is time-limited, and you choose the period when you publish. Expired content becomes unreadable and is deleted automatically. Before expiry, you can revoke publication at any time from "Disable QR" in the app; once revoked, the link no longer opens.</p>
+  <p>Publication is time-limited; expired content becomes unreadable and is deleted automatically.</p>
+  <ul>
+    <li><strong>QR code</strong> — you choose the period when you publish. Before expiry, you can revoke publication at any time via "Stop QR publishing" (or "Stop all publications" in Settings); once revoked, the link no longer opens</li>
+    <li><strong>Send as link</strong> — the period is fixed at 7 days. Because the app keeps no record of links you send, <strong>a sent link cannot be revoked before it expires</strong>. Please check the recipient and content before sending</li>
+  </ul>
   <p>Our servers count how many times published content has been played or viewed and report that count back to you. We do not record who viewed it.</p>
 
   <h3>"Leave a Story at This Place" (Optional)</h3>
-  <p>MimiSeka Scia lets you leave a story at the place where the photo was taken. If you use this feature, your story (text, narration audio, capture date, and capture coordinates) is stored on our servers and <strong>shown anonymously to other users who visit that place, as "a story someone left here."</strong> The publication period is one year.</p>
+  <p>MimiSeka Scia lets you leave a story at the place where the photo was taken. If you use this feature, your story (text, narration audio, capture date and time, and the place where it was left) is stored on our servers and <strong>shown anonymously to other users who visit that place, as "a story someone left here."</strong> The publication period is one year.</p>
   <p>Your name and display name are never shown alongside a story you leave. You can withdraw it at any time from within the app. Withdrawing stops new deliveries, though it may remain on devices that already received it.</p>
-  <p>When you place a story, its text is sent once to an automated content check (OpenAI's Moderation API) before it is published. Text judged inappropriate is neither stored nor published. Photos are never stored on our servers by this feature (what is stored is the text, the narration audio, the capture date, and the capture coordinates).</p>
+  <p>When you place a story, its text is sent once to an automated content check (OpenAI's Moderation API) before it is published. Text judged inappropriate is neither stored nor published (so that we can review the decision, the result and up to the first 200 characters of the text are sent to the operator). Photos are never stored on our servers by this feature (what is stored is the text, the narration audio, the capture date and time, and the place where it was left; recipients see only the month and year of capture).</p>
   <p>Stories left at a place can be reported. A reported story stops being delivered immediately, and we then review it and decide whether to restore or delete it. The reason selected by the reporter, and any note they choose to write, are stored on our servers for up to 400 days for audit purposes.</p>
   <p>For this feature only, we store a <strong>pseudonymised identifier</strong> for the author and for the reporter. It is derived from the publishing identifier held on your device (a value unrelated to your name or email address) by a salted, irreversible hash, and it is used for two purposes only:</p>
   <ul>
@@ -92,34 +108,35 @@
   <p>This identifier is never displayed, and never passed to other users or apps. Authors and reporters are hashed with separate domains, so the two cannot be matched against each other. Block records (who does not want to receive from whom) are likewise stored as a relation between pseudonymised identifiers.</p>
 
   <h3>Push Notifications (Optional)</h3>
-  <p>If you use "letters from MimiSeka," we deliver notifications through Apple's Push Notification service (APNs). You can revoke notification permission at any time in iOS Settings.</p>
+  <p>"Letters from MimiSeka" are notifications created on your device; they are not sent from our servers. Notices delivered through iCloud (such as reactions to something you shared) use Apple's Push Notification service (APNs). You can revoke notification permission at any time in iOS Settings.</p>
 
   <h3>iCloud (CloudKit) Storage and Sync</h3>
-  <p>The story text and titles, capture notes, emotion tags, and narration audio collected on your shelf are stored and synced in your own iCloud. <strong>The photo images themselves are not sent</strong> — they stay in your device's photo library, and only an identifier for each photo is stored in iCloud. This happens entirely within Apple's services and does not pass through our servers. Data held in iCloud is governed by Apple's privacy policy.</p>
+  <p>The records collected on your shelf are stored and synced in your own iCloud. This includes story text and titles, capture notes, emotion tags, narration audio, the location where each photo was taken, the weather at capture time, the AI's analysis of the photo, and your chosen writing style and vision settings. <strong>The photo images themselves are not sent</strong> — they stay in your device's photo library, and only an identifier for each photo is stored in iCloud. This happens entirely within Apple's services and does not pass through our servers. Data held in iCloud is governed by Apple's privacy policy.</p>
 
   <h3>In-App Purchases</h3>
   <p>If you buy a subscription or a ticket pack, we verify the signed purchase receipt issued by Apple on our servers and record the resulting allowance against your device identifier. We never receive your payment details, such as credit card numbers.</p>
 
   <h3>Usage Data</h3>
-  <p>To improve the app, the following usage data is recorded on your device:</p>
+  <p>To improve the app, the following usage data is recorded and sent to our servers:</p>
   <ul>
-    <li>Number and completion rate of narrative generations</li>
-    <li>Feature usage frequency</li>
+    <li>Number and completion rate of story generations, the writing style chosen, and generation time</li>
+    <li>Feature usage frequency, and whether narration was listened to the end</li>
     <li>Error occurrences</li>
     <li>Accessibility feature usage (VoiceOver, etc.)</li>
   </ul>
-  <p>This data is anonymized and stored on our servers solely for the purpose of service improvement. It is never used to identify any individual.</p>
+  <p>For analysis, each record carries attributes: your initial survey answers (vision status and age), language and region, device model, and a coarse location (country and state/prefecture).</p>
+  <p>Records do not contain the device identifier itself. However, to link records from the same day, each carries a <strong>code that changes every day</strong> (an irreversible value derived from the device identifier and the date). Because the code changes with the date, the same device cannot be followed across days. This is pseudonymous rather than anonymous data. It is used solely for service improvement and never to identify any individual.</p>
 
   <h3>Data Retention</h3>
-  <p>Content published as a "listenable photo" is retained until the period you chose when publishing (30 days by default), after which it is deleted automatically. A story left at a place is retained for one year. Report records are retained for up to 400 days, and block records until they are removed. In both cases, revoking publication in the app makes the content unreadable from then on. Usage data and device identifiers are retained for the duration of service operation and deleted when the service is discontinued. Initial survey data is retained as anonymized statistical information for the duration of service operation.</p>
+  <p>Content published as a "listenable photo" is retained until the period you chose when publishing (30 days by default) for QR codes, or for 7 days when sent via "Send as link", after which it is deleted automatically. A story left at a place is retained for one year. Report records are retained for up to 400 days, and block records until they are removed. Revoking a QR publication or a story left at a place in the app makes it unreadable from then on. Per-cell photo counts are retained for up to 5 years. Usage data and device identifiers are retained for the duration of service operation and deleted when the service is discontinued. Initial survey data is retained as statistical information containing nothing that identifies you or your device for the duration of service operation.</p>
 
   <h2>2. Third-Party Services</h2>
 
   <h3>Generative AI Services</h3>
   <p>The following generative AI services are used for photo analysis and narrative generation. All communications are routed through our server over encrypted connections (HTTPS).</p>
   <ul>
-    <li><strong>OpenAI</strong> — Photo analysis, text generation</li>
-    <li><strong>Anthropic (Claude)</strong> — Text generation</li>
+    <li><strong>OpenAI</strong> — Photo analysis, text generation, content check for "Leave a Story at This Place" (Moderation API)</li>
+    <li><strong>Anthropic (Claude)</strong> — Photo analysis, text generation</li>
   </ul>
   <p>How data is handled after transmission is governed by each service's privacy policy:</p>
   <ul>
@@ -128,7 +145,7 @@
   </ul>
 
   <h3>Text-to-Speech Services</h3>
-  <p>The following services may be used to convert generated text to audio. Only text generated within the app is sent; no photos or user-identifying information is included.</p>
+  <p>The following services may be used to convert generated text to audio. Only the text to be read aloud is sent (including text you wrote or edited yourself); no photos or user-identifying information is included.</p>
   <ul>
     <li><strong>OpenAI</strong> — Speech synthesis for summaries and narratives</li>
     <li><strong>Aivis Cloud</strong> — Speech synthesis for summaries and narratives (when using the natural Japanese voice)</li>
@@ -139,20 +156,21 @@
   </ul>
 
   <h3>X (formerly Twitter)</h3>
-  <p>Posting to X is optional. If you choose to use this feature, you connect your account via X's secure account authorisation. The app only requests <strong>posting (write) permission</strong>; it does not access your timeline, followers, or any other read permissions. Authentication credentials are securely stored in the device's secure credential storage (Keychain) and deleted upon logout.</p>
+  <p>Posting to X is optional. If you choose to use this feature, you connect your account via X's secure account authorisation. The app requests only the permissions needed to post (X requires permission to read posts and your account information in order to post). The app never reads your timeline or followers. The photo and text you post are sent directly from your device to X and do not pass through our servers. Authentication credentials are securely stored in the device's secure credential storage (Keychain) and deleted upon logout.</p>
 
   <h2 id="local">3. Data Stored on Your Device</h2>
 
   <h3>Scia</h3>
   <p>Generated summary and narrative text can be embedded as a description field stored inside the photo file (IPTC caption) and saved to the "MimiSeka" album in your device's photo library. This feature can be toggled on or off in Settings. Saved photos may include the following embedded data:</p>
   <ul>
-    <li>Summary/narrative text (as ALT text)</li>
-    <li>Emotion tags (if selected)</li>
-    <li>Vision level and narrative mode</li>
-    <li>Location data (if location services are enabled)</li>
+    <li>Summary/narrative text (as ALT text) and title</li>
+    <li>Emotion tags (if selected), weather and time of day at capture, and a composition rating</li>
+    <li>Place name and location data (if location services are enabled)</li>
+    <li>A marker showing the photo was made with MimiSeka, and a per-photo identifier</li>
   </ul>
+  <p>If you share the photo from the Photos app, this information travels with it.</p>
 
-  <p>We also store, on your device, the record of your conversations about photos and the profile notes distilled from them (how you speak and what you tend to care about). These are never synced to iCloud and never leave your device. You can review and delete them from the app's settings.</p>
+  <p>We also store, on your device, the record of your conversations about photos, the "conversation memory" distilled from them (notes on how you speak and what you tend to care about), and notes on your writing style. These are not synced to iCloud (CloudKit). The conversation memory and writing-style notes are also excluded from device backups (the conversation record is included in device backups). They are, however, sent to generative AI services as context when conversations and diary entries are generated (see <a href="#dialogue">Conversation, Diary, and Note Text</a>). You can review and delete the conversation memory from "Review conversation memory" and "Delete conversation memory" in the "&hellip;" menu on the conversation screen, and "Erase all data" in Settings deletes all of it.</p>
 
   <h3>Voice Recordings Attached to Photos</h3>
   <p>In Scia you can record your own voice and attach it to a photo (before or after taking it, or later from the chapter screen). Recording your voice is the only feature that uses the microphone.</p>
@@ -164,7 +182,7 @@
     <li>All external communications are encrypted via HTTPS</li>
     <li>Service credentials are managed on our server, not stored in the app</li>
     <li>Apple's App Attest framework is used to verify that requests come from genuine, unmodified copies of the app</li>
-    <li>Authentication credentials and device identifiers are securely stored in the device's secure credential storage (Keychain)</li>
+    <li>X credentials and the App Attest key identifier are stored in the device's secure credential storage (Keychain)</li>
   </ul>
 
   <h2>5. Sharing with Third Parties</h2>
@@ -174,7 +192,7 @@
   <p>Your data may be processed by third-party generative AI and speech synthesis services in countries outside your country of residence. All transfers are conducted over encrypted connections (HTTPS) via our server. By using the app, you acknowledge that your data may be transferred to and processed in countries that may have different data protection standards from your own.</p>
 
   <h2>7. Children's Privacy</h2>
-  <p>This app is not directed at children under the age of 13, but it may be used by children with visual impairments. In compliance with the Children's Online Privacy Protection Act (COPPA), all survey responses and usage data are collected exclusively as anonymous, non-personally identifiable information for all users regardless of age. Device identifiers are sent to our server solely for request rate limiting and are not linked to any personal information. Core app features (photo analysis, narrative generation, and read-aloud) remain fully available regardless of age.</p>
+  <p>This app is not directed at children under the age of 13, but it may be used by children with visual impairments. In compliance with the Children's Online Privacy Protection Act (COPPA), survey responses and usage data are collected for all users regardless of age without being linked to names, contact details, or other personal information (see "Usage Data" for how usage data is handled). Device identifiers are sent to our server only for the purposes described under "Device Identifier" and are not linked to any personal information. Core app features (photo analysis, narrative generation, and read-aloud) remain fully available regardless of age.</p>
   <p>That said, publishing a "listenable photo" and leaving a story at a place are features where what you write can be seen by other people. If a child uses the app, a parent or guardian should review these features first. Any publication can be revoked.</p>
   <p>If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete such information promptly. If you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a>.</p>
 
@@ -183,9 +201,10 @@
   <ul>
     <li>Disable location services, album saving, and other features at any time from the in-app Settings</li>
     <li>Disconnect X integration by logging out, which deletes your authentication credentials</li>
-    <li>Revoke a published "listenable photo" at any time via "Disable QR" in the app; once revoked, the link no longer opens</li>
-    <li>Withdraw a story you left at a place at any time via "stop leaving it" in the app</li>
-    <li>Delete all on-device data at any time via "Erase All Data" in Settings</li>
+    <li>Revoke a "listenable photo" published as a QR code at any time via "Stop QR publishing" in the app or "Stop all publications" in Settings; once revoked, the link no longer opens (content sent via "Send as link" cannot be revoked and is deleted automatically after 7 days)</li>
+    <li>Withdraw a story you left at a place at any time via "Stop placing" in the app</li>
+    <li>Review and delete the conversation memory at any time from the "&hellip;" menu on the conversation screen</li>
+    <li>Delete all on-device data at any time via "Erase all data" in Settings</li>
     <li>Delete all on-device data by uninstalling the app (excluding photos already saved to your photo library). Revoke anything you have published as a "listenable photo" or left at a place before uninstalling</li>
   </ul>
 
@@ -209,7 +228,7 @@
   <h2>11. Contact Us</h2>
   <div class="contact">
     <p>If you have any questions or requests regarding privacy, please contact us:</p>
-    <p>Operator: MimiSeka Project<br>Privacy enquiries: <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a><br>Reports, problems, and general enquiries: <a href="mailto:support@mimiseka.jp">support@mimiseka.jp</a> (also reachable from Settings &rarr; About This App &rarr; Contact us in the app)</p>
+    <p>Operator: MimiSeka Project<br>Privacy enquiries: <a href="mailto:privacy@mimiseka.jp">privacy@mimiseka.jp</a><br>Reports, problems, and general enquiries: <a href="mailto:support@mimiseka.jp">support@mimiseka.jp</a> (also reachable from Settings &rarr; About &rarr; Contact us in the app)</p>
   </div>
 
 </main>
