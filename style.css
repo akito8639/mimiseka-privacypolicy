@@ -35,6 +35,9 @@ a:focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; }
 .topbar { padding: 22px 24px 0; max-width: 720px; margin: 0 auto; font-size: 0.82rem; display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
 .topbar a { color: var(--ink-2); text-decoration: none; }
 .topbar a:hover { color: var(--shu); }
+/* 言語の切り替え。いまの言語は出さず、もう一方へのリンクだけを右端に置く */
+.topbar .lang { margin-left: auto; }
+.topbar .lang a { text-decoration: underline; text-underline-offset: 3px; }
 .topbar .home { display: inline-flex; align-items: center; padding: 8px 0; }
 .topbar .home img { height: 26px; width: auto; display: block; }
 

@@ -56,5 +56,7 @@
 
   const apply = (root) => { nbsp(root); applyOne(root, CLOSE); applyOne(root, OPEN); applyOne(root, LATIN); };
   window.mimisekaKinsoku = apply;
-  apply(document.body);
+  // ここでやっているのは日本語の禁則なので、英語の頁には当てない。
+  // 当てると英単語が折り返し不可の塊になり、狭い幅ではみ出す種になる。
+  if ((document.documentElement.lang || '').toLowerCase().startsWith('ja')) apply(document.body);
 })();
